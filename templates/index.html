@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIKA NA I STUDIO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header in logotip */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #767676;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        .logo p {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-align: center;
+        }
+
+        /* Hamburger meni */
+        .menu-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: #767676;
+            cursor: pointer;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px;
+            height: 18px;
+        }
+
+        .hamburger .line {
+            width: 100%;
+            height: 2px;
+            background-color: white;
+        }
+
+        /* Glavni vsebinski del */
+        .content-wrapper {
+            display: flex;
+            position: relative;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 40px 0;
+        }
+
+        /* Mobilni meni */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 400px;
+            height: 100vh;
+            background-color: #767676;
+            color: white;
+            transition: right 0.3s ease;
+            z-index: 1000;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 60px 30px;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px 0;
+        }
+
+        /* Dropdown v meniju */
+        .dropdown-menu {
+            display: none;
+            padding-left: 20px;
+        }
+
+        .dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dropdown-toggle i {
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle.active i {
+            transform: rotate(180deg);
+        }
+
+        /* Vsebina domače strani */
+        .home-content {
+            padding: 20px 0;
+        }
+
+        .intro-text {
+            margin-bottom: 40px;
+        }
+
+        .intro-text h2 {
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .intro-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-appointment {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #767676;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-appointment:hover {
+            background-color: #5a5a5a;
+        }
+
+        .services-intro h3 {
+            font-size: 24px;
+            font-weight: normal;
+            color: #767676;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 20px;
+            }
+            
+            .intro-text h2 {
+                font-size: 24px;
+            }
+            
+            .intro-text p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="/">
+                    <h1>PIKA NA I</h1>
+                    <p>STUDIO</p>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <div class="main-content">
+                <div class="home-content">
+                    <div class="intro-text">
+                        <h2>Za lepoto, ki traja:</h2>
+                        <p>Manikura,<br>
+                        oblikovanje obrvi,<br>
+                        podaljševanje nohtov,<br>
+                        vihanje trepalnic in<br>
+                        permanentni make-up.</p>
+                        
+                        <a href="#" class="btn-appointment">NAROČI SE</a>
+                    </div>
+                    
+                    <div class="services-intro">
+                        <h3>Naša ponudba</h3>
+                        <!-- Tukaj lahko dodate opis vaših storitev ali dodaten vsebinski blok -->
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="mobile-menu" id="mobile-menu">
+                <div class="close-menu" id="close-menu">
+                    <i class="fas fa-times"></i>
+                </div>
+                <ul>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Storitve <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/storitve">Manikura</a></li>
+                            <li><a href="/storitve">Oblikovanje obrvi</a></li>
+                            <li><a href="/storitve">Podaljševanje nohtov</a></li>
+                            <li><a href="/storitve">Vihanje trepalnic</a></li>
+                            <li><a href="/storitve">Permanentni make-up</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/ekipa">Ekipa</a></li>
+                    <li><a href="/galerija">Galerija</a></li>
+                    <li><a href="/o-nas">O nas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMenu = document.getElementById('close-menu');
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            
+            menuToggle.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+            });
+            
+            closeMenu.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+            
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.classList.toggle('active');
+                    const dropdownMenu = this.nextElementSibling;
+                    if (dropdownMenu.style.display === 'block') {
+                        dropdownMenu.style.display = 'none';
+                    } else {
+                        dropdownMenu.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

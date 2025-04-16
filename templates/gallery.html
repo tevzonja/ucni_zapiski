@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+{% block title %}Galerija - Beauty Salon{% endblock %}
+
+{% block content %}
+    <h1>Naša galerija</h1>
+    <div class="gallery">
+        <img src="{{ url_for('static', filename='images/example1.jpg') }}" alt="Primer 1">
+        <img src="{{ url_for('static', filename='images/example2.jpg') }}" alt="Primer 2">
+        <img src="{{ url_for('static', filename='images/example3.jpg') }}" alt="Primer 3">
+    </div>
+{% endblock %}
+
+</body>
+</html>
